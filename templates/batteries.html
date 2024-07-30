@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Batteries</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Батареи</h1>
+    <ul>
+        {% for battery in batteries %}
+            <li>
+                <a href="/batteries/{{ battery.id }}">{{ battery.name }}</a> (ID устройства: {{ battery.device_id }})
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/">На главную</a>
+    <form action="/batteries" method="post">
+        <h2>Создать батарею</h2>
+        <input type="text" name="name" placeholder="Батарея">
+        <input type="number" name="device_id" placeholder="ID устройства">
+        <button type="submit">Создать</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Устройства</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Устройства</h1>
+    <ul>
+        {% for device in devices %}
+            <li>
+                <a href="/devices/{{ device.id }}">{{ device.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/">На главную</a>
+    <form action="/devices" method="post">
+        <h2>Создать устройство</h2>
+        <input type="text" name="name" placeholder="Название">
+        <button type="submit">Создать</button>
+    </form>
+</body>
+</html>

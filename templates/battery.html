@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Батарея {{ battery.name }}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Батарея {{ battery.name }}</h1>
+    <a href="/batteries">Все батареи</a>
+
+    <h3>Изменить батарею</h3>
+    <form action="/batteries/{{ battery.id }}" method="post">
+        <input type="hidden" name="_method" value="put">
+        <input type="text" name="name" placeholder="Название" value="{{ battery.name }}">
+        <input type="number" name="device_id" placeholder="ID устройства" value="{{ battery.device_id }}">
+        <button type="submit">Сохранить</button>
+    </form>
+</body>
+</html>

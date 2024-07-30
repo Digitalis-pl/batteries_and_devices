@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Устройство {{ device.name }}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Устройство {{ device.name }}</h1>
+    <a href="/devices">Все устройства</a>
+
+    <h3>Изменить устройство</h3>
+    <form action="/devices/{{ device.id }}" method="post">
+        <input type="hidden" name="_method" value="put">
+        <input type="text" name="name" placeholder="Название" value="{{ device.name }}">
+        <button type="submit">Сохранить</button>
+    </form>
+</body>
+</html>

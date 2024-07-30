@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Батареи и устройства</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Батареи и устройства</h1>
+    <a href="/devices">Все устройства</a> | <a href="/batteries">Все батареи</a>
+    <form action="/devices" method="post">
+        <h2>Создать устройство</h2>
+        <input type="text" name="name" placeholder="Название">
+        <button type="submit">Создать</button>
+    </form>
+    <form action="/batteries" method="post">
+        <h2>Создать батарею</h2>
+        <input type="text" name="name" placeholder="Название">
+        <input type="number" name="device_id" placeholder="ID устройства">
+        <button type="submit">Создать</button>
+    </form>
+</body>
+</html>
